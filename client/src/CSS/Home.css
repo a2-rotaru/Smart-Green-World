@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.mobileHome {
+  display: none;
+}
+
+.home-container {
+  display: grid;
+  grid-template:
+    "home-title" 200px
+    "value-icon" 100px
+    "live-parameters" 40px
+    "crop-title" 50px
+    "crop-icons" 100px
+    "crop-parameters" 40px
+    "advice" 100px
+    "footer" 50px/
+    1fr;
+  height: 100%;
+}
+
+/* BACKGROUND COLOR */
+
+.home-container,
+.profile-container,
+.notes-container,
+.add-container {
+  background: hsla(152, 100%, 50%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(152, 100%, 50%, 1) 0%,
+    hsla(186, 100%, 69%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(152, 100%, 50%, 1) 0%,
+    hsla(186, 100%, 69%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(152, 100%, 50%, 1) 0%,
+    hsla(186, 100%, 69%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#00FF87", endColorstr="#60EFFF", GradientType=1 );
+}
+
+/* TITLE SECTION */
+.home-title {
+  grid-area: home-title;
+  text-align: center;
+  grid-row: 1;
+}
+.home-title h1,
+.home-title h2,
+.home-title h4 {
+  padding: 20px;
+}
+.crop-title {
+  grid-area: crop-title;
+  text-align: center;
+  grid-row: 4;
+  margin-top: 20px;
+}
+
+/* IMAGE SECTION */
+.value-icon,
+.crop-icons {
+  grid-area: value-icon;
+  grid-row: 2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px 3%;
+}
+
+.icons {
+  max-width: 300px;
+  max-height: 40px;
+}
+.hum-icon,
+.water-icon,
+.room-icon,
+.pH-icon,
+.humidity-icon {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+/* PARAMETERS SECTION */
+.live-parameters {
+  grid-area: live-parameters;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-left: 10px;
+}
+
+.crop-icons {
+  grid-area: crop-icons;
+  grid-row: 5;
+}
+
+.crop-parameters {
+  grid-area: crop-parameters;
+  grid-row: 6;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-left: 5px;
+}
+
+.live-humidity {
+  text-align: right;
+  margin-right: 40px;
+}
+.humidity {
+  text-align: right;
+  margin-right: 25px;
+}
+
+.waterTemp {
+  text-align: center;
+  margin-left: 90px;
+}
+.roomTemp {
+  text-align: center;
+  margin-right: 80px;
+}
+
+.live-pH {
+  text-align: left;
+  margin-left: 50px;
+}
+.pH {
+  text-align: left;
+  margin-left: 30px;
+}
+
+/* MESSAGE SECTION */
+.advice {
+  padding-top: 20px;
+  grid-area: advice;
+  grid-row: 7;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: red;
+}
+
+.warning-icon {
+  max-width: 30px;
+  max-height: 40px;
+  margin-left: 200px;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.warning-message,
+.advice-message {
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.warning-message {
+  grid-row: 1;
+  grid-column: 1;
+  text-align: center;
+  padding-left: 40px;
+}
+
+.advice-message {
+  grid-row: 1;
+  grid-column: 2;
+  margin-left: 20px;
+  padding-left: 90px;
+}
+
+/* CSS FOR MOBILE APP */
+
+@media (max-width: 417px) {
+  .home {
+    display: none;
+  }
+  .mobileHome {
+    display: grid;
+    height: 100vh;
+  }
+
+  .home-container {
+    display: grid;
+    grid-template:
+      "home-title" 150px
+      "live-parameters" 130px
+      "crop-title" 70px
+      "crop-parameters" 130px
+      "advice" 270px
+      "footer" 50px/
+      1fr;
+    /* height: 100vh; */
+    max-height: 896%;
+  }
+  /* TITLE SECTION */
+
+  .home-title h2,
+  .home-title h4 {
+    padding: 15px;
+    font-size: 13px;
+  }
+  .home-title h1 {
+    font-size: 18px;
+  }
+  .crop-title {
+    grid-area: crop-title;
+    text-align: center;
+    grid-row: 3;
+    margin-top: 30px;
+    font-size: 13px;
+  }
+
+  /* LIVE PARAMETERS SECTION */
+
+  .live-parameters {
+    grid-area: live-parameters;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: rgb(253, 253, 253);
+    border-radius: 10px;
+    margin: 16px;
+  }
+  .hum-icon,
+  .water-icon,
+  .room-icon,
+  .pH-icon,
+  .humidity-icon {
+    margin-top: 20px;
+  }
+  .live-humidity {
+    text-align: left;
+    margin: 10px 0 0 5px;
+    font-size: 14px;
+  }
+
+  .live-waterTemp {
+    text-align: left;
+    margin: 10px 0 0 15px;
+    font-size: 14px;
+  }
+  .roomTemp {
+    text-align: center;
+    margin: 10px 0 0 11px;
+    font-size: 14px;
+    font-size: 14px;
+  }
+
+  .live-pH {
+    text-align: center;
+    margin: 10px 0 0 23px;
+    font-size: 14px;
+  }
+
+  /* ICONS SECTION */
+  .crop-icons {
+    grid-area: crop-icons;
+    grid-row: 4;
+  }
+  .water-icon {
+    margin-left: 20px;
+  }
+
+  .pH-icon {
+    margin-left: 40px;
+  }
+  .room-icon {
+    margin-left: 30px;
+  }
+
+  /* NORMAL PARAMETERS SECTION */
+  .crop-parameters {
+    grid-area: crop-parameters;
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: rgb(253, 253, 253);
+    border-radius: 10px;
+    margin: 16px;
+  }
+
+  .humidity {
+    text-align: right;
+    margin: 10px 25px 0 0;
+    font-size: 14px;
+  }
+  .humidity-icon {
+    margin-left: 10px;
+  }
+  .waterTemp {
+    text-align: left;
+    margin: 10px 0 0 5px;
+    font-size: 14px;
+  }
+  .pH {
+    margin: 10px 0 0 30px;
+    font-size: 14px;
+  }
+  /* MESSAGE SECTION */
+  .advice {
+    grid-area: advice;
+    grid-row: 5;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  .warning-message {
+    grid-row: 1;
+    grid-column: 1;
+    text-align: left;
+    padding-left: 0px;
+    margin: 0 10px 0 60px;
+    font-size: 13px;
+  }
+  .advice-message {
+    grid-row: 2;
+    grid-column: 1;
+    font-size: 13px;
+    margin: 0 5px 0 20px;
+    padding-left: 0px;
+  }
+  .warning-icon {
+    margin-left: 20px;
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
+@media (max-width: 360px) {
+  .humidity {
+    margin: 10px 10px 0 0;
+  }
+  .roomTemp {
+    text-align: center;
+    margin: 10px 0 0 10px;
+  }
+}

@@ -1,0 +1,99 @@
+.account-form {
+  grid-area: form;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 130px 1fr;
+  grid-gap: 10px;
+}
+
+.account-body {
+  background: white;
+  margin-left: 175px;
+  border-radius: 10px;
+  width: 400px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 70px 70px 70px 70px 70px 70px 30px;
+}
+.account-header h1,
+.account-header h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+/* PLACING ITEMS IN BODY GRID */
+
+.usernameLabel,
+.Username-input {
+  grid-row: 1;
+  grid-column: 1;
+}
+.passwordLabel,
+.Password-input {
+  grid-row: 2;
+  grid-column: 1;
+}
+.nameLabel,
+.name-input {
+  grid-row: 3;
+  grid-column: 1;
+}
+.emailLabel,
+.email-input {
+  grid-row: 4;
+  grid-column: 1;
+}
+.cropLabel,
+.crop-input {
+  grid-row: 5;
+  grid-column: 1;
+}
+.arduinoLabel,
+.arduino-input {
+  grid-row: 6;
+  grid-column: 1;
+}
+.createButton {
+  grid-row: 7;
+  grid-column: 1;
+}
+.login-link {
+  text-align: center;
+  grid-row: 8;
+  grid-column: 1;
+}
+
+.usernameLabel {
+  margin: 35px 0 0 30px;
+}
+.Username-input {
+  margin: 55px 0 0 30px;
+}
+.Password-input,
+.name-input,
+.email-input,
+.crop-input,
+.arduino-input {
+  margin: 25px 0 0 30px;
+}
+
+.nameLabel,
+.passwordLabel,
+.emailLabel,
+.arduinoLabel,
+.cropLabel {
+  margin: 5px 0 0 30px;
+}
+
+/* CSS FOR MOBILE PHONE */
+
+@media (max-width: 417px) {
+  .account-header h2 {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+  .account-header h1 {
+    font-size: 17px;
+    margin-top: 40px;
+  }
+}

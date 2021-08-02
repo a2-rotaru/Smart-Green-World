@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template:
+    "background-image form" 1fr/
+    800px 1fr;
+  height: 100vh;
+  background: hsla(152, 100%, 50%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(152, 100%, 50%, 1) 0%,
+    hsla(186, 100%, 69%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(152, 100%, 50%, 1) 0%,
+    hsla(186, 100%, 69%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(152, 100%, 50%, 1) 0%,
+    hsla(186, 100%, 69%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#00FF87", endColorstr="#60EFFF", GradientType=1 );
+}
+.background-image {
+  grid-area: background-image;
+  width: 800px;
+  height: 100%;
+  border-radius: 10px;
+}
+.form {
+  grid-area: form;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px 1fr;
+  grid-gap: 10px;
+}
+/* Container */
+.body {
+  background: white;
+  margin-left: 175px;
+  border-radius: 10px;
+  width: 400px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px 70px 70px 70px 100px 70px;
+}
+/* Title */
+.header h1,
+.header h2 {
+  grid-row: 1;
+  grid-column: 1;
+  text-align: center;
+  margin-top: 30px;
+}
+/* LABELS FOR LOGIN AND CREATE ACCOUNT */
+.usernameLogin,
+.passwordLogin {
+  display: block;
+  font-size: 16px;
+  color: rgb(12, 11, 11);
+}
+
+/* INPUT FOR LOGIN AND CREATE ACCOUNT */
+.username-input,
+.Username-input,
+.Password-input,
+.password-input,
+.name-input,
+.email-input,
+.crop-input,
+.arduino-input {
+  height: 40px;
+  border: 0;
+  border-bottom: 1px solid #555;
+  background: transparent;
+  width: 70%;
+  font-size: 16px;
+  color: rgb(22, 20, 20);
+}
+
+/* PLACING ITEMS IN BODY GRID */
+
+.usernameLogin {
+  grid-row: 1;
+  grid-column: 1;
+  margin: 50px 0 0 30px;
+}
+.username-input {
+  grid-row: 2;
+  margin-left: 30px;
+}
+.passwordLogin {
+  grid-row: 3;
+  margin: 50px 0 0 30px;
+}
+.password-input {
+  grid-row: 4;
+  margin: 0px 0 0 30px;
+}
+.loginButton {
+  grid-row: 5;
+}
+
+/* BUTTON */
+.loginButton,
+.createButton {
+  text-align: center;
+}
+.loginButton input,
+.createButton input {
+  background-color: rgba(0, 136, 169, 1);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 50px;
+  width: 10em;
+}
+.loginButton input:hover,
+.createButton input:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* INPUT FIELDS FOCUS FOR LOGIN AND CREATE ACCOUNT */
+.body input:focus,
+.account-body input:focus,
+.crop-input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #e74c3c;
+}
+/* LINK */
+.link {
+  grid-row: 6;
+  text-align: center;
+}
+/* ERROR MESSAGE */
+.messages,
+.error-message,
+.id-error {
+  color: red;
+  font-weight: bold;
+}
+.error-message {
+  grid-row: 1;
+  grid-column: 1;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* CSS FOR MOBILE PHONE */
+
+@media (max-width: 417px) {
+  .form {
+    grid-gap: 0;
+  }
+
+  .container {
+    display: grid;
+    grid-template:
+      "form" 1fr/
+      1fr;
+    height: 100vh;
+  }
+  .background-image {
+    display: none;
+  }
+
+  .body,
+  .account-body {
+    margin-left: 60px;
+    width: 300px;
+  }
+  /* Title */
+  .header h1,
+  .header h2,
+  .account-header h1,
+  .account-header h2 {
+    grid-row: 1;
+    grid-column: 1;
+    text-align: center;
+  }
+  .header h1 {
+    margin-top: 70px;
+    font-size: 17px;
+  }
+  .header h2 {
+    margin-top: 45px;
+    font-size: 15px;
+  }
+
+  .usernameLogin,
+  .passwordLogin {
+    display: block;
+    font-size: 16px;
+    color: rgb(12, 11, 11);
+  }
+  .username-input,
+  .password-input {
+    height: 40px;
+    border: 0;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    width: 70%;
+    font-size: 16px;
+    color: rgb(22, 20, 20);
+  }
+  .usernameLogin {
+    grid-row: 1;
+    margin: 50px 0 0 30px;
+  }
+  .username-input {
+    grid-row: 2;
+    margin-left: 30px;
+  }
+  .passwordLogin {
+    grid-row: 3;
+    margin: 50px 0 0 30px;
+  }
+  .password-input {
+    grid-row: 4;
+    margin: 0px 0 0 30px;
+  }
+  .loginButton {
+    grid-row: 5;
+  }
+
+  .error-message {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 360px) {
+  .body,
+  .account-body {
+    margin-left: 30px;
+  }
+
+  .error-message {
+    margin-top: 0px;
+  }
+}

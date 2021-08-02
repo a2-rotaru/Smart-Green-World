@@ -1,0 +1,136 @@
+/* CSS GRID */
+.add-container {
+  display: grid;
+  grid-template:
+    "note-icon" 100px
+    "add-section" 1fr
+    "footer" 50px /
+    1fr;
+  height: 100vh;
+  padding-top: 100px;
+}
+
+/* ADD SECTION */
+.add-section {
+  grid-area: add-section;
+  margin: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.add-section h3 {
+  grid-column: 2/3;
+  display: inline-block;
+  padding: 20px;
+  text-align: left;
+  margin-left: 200px;
+  width: 0px;
+}
+.add-button-section {
+  grid-row: 3;
+  padding-top: 50px;
+}
+.add-button-section {
+  display: grid;
+  grid-column: 1fr;
+  padding-bottom: 50px;
+}
+
+.react-datepicker__input-container input,
+.add-section input,
+.description-section .input {
+  grid-column: 3/4;
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  /* background-color: rgb(251, 252, 250); */
+  width: 200px;
+  margin: 10px;
+}
+
+/* DESCRIPTION SECTION */
+.description-section {
+  grid-area: add-section;
+  text-align: center;
+  margin-top: 40px;
+}
+.description-section h3 {
+  grid-column: 2/3;
+  grid-row: 2;
+  display: inline-block;
+  padding: 20px;
+}
+
+.description-section input {
+  grid-row: 2;
+  padding: 20px;
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  /* background-color: rgb(251, 252, 250); */
+  width: 200px;
+  margin: 10px;
+}
+
+/* BUTTON SECTION */
+.addNote {
+  grid-area: date-section;
+  grid-column: 2/3;
+  grid-row: 3;
+  text-align: center;
+  width: 150px;
+}
+
+.submit button {
+  margin-top: 30px;
+}
+
+/* CSS FOR MOBIEL APP  */
+
+@media (max-width: 417px) {
+  .add-container {
+    display: grid;
+    grid-template:
+      "note-icon" 100px
+      "add-section" 1fr
+      "footer" 50px /
+      1fr;
+    height: 100vh;
+    padding-top: 40px;
+  }
+
+  /* ADD SECTION */
+  .add-section {
+    grid-area: add-section;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 50px 50px 120px;
+  }
+
+  .add-section h3 {
+    grid-column: 1;
+    font-size: 15px;
+  }
+
+  .ad-section .date-title {
+    grid-row: 1;
+  }
+  .add-section .description-title {
+    grid-row: 3;
+  }
+  .add-section .date-title,
+  .add-section .description-title {
+    margin-left: 0;
+  }
+  .add-section .input {
+    margin: 10px 20px 10px 20px;
+    border-radius: 10px;
+    grid-row: 4;
+  }
+  .add-section .datePicker {
+    grid-row: 3;
+    margin: 10px 0 0 20px;
+  }
+}

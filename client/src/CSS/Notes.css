@@ -1,0 +1,271 @@
+/* CSS GRID */
+.notes-container {
+  display: grid;
+  grid-template:
+    "title " 100px
+    "note-icon" 150px
+    "note-section" 1fr
+    "click" 100px
+    "footer" 50px /
+    1fr;
+  height: 100vh;
+  grid-gap: 20px;
+}
+
+.message-note {
+  text-align: center;
+  grid-area: note-section;
+  margin: 50px 0 40px 0;
+}
+.edit-body {
+  display: grid;
+  grid-template-rows: 80px 1fr 100px;
+}
+
+.note-error {
+  grid-area: note-icon;
+  text-align: center;
+  font-size: 18px;
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+/* BUTTON */
+
+.click {
+  display: grid;
+  grid-area: click;
+}
+.add,
+.delete,
+.edit,
+.edit-body .submit,
+.addNote {
+  background-color: rgba(0, 136, 169, 1);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 50px;
+}
+.add {
+  grid-column: 1/2;
+  width: 130px;
+  height: 35px;
+  margin-left: 300px;
+}
+.delete {
+  grid-column: 2/3;
+  width: 130px;
+  height: 35px;
+}
+
+.edit {
+  grid-column: 3/4;
+  width: 130px;
+  height: 35px;
+}
+
+.add:hover,
+.delete:hover,
+.edit:hover,
+.edit-body .submit :hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* TITLE SECTION */
+.notes-container h1 {
+  grid-area: title;
+  text-align: center;
+  margin: 50px;
+  padding: 10px;
+  display: inline-block;
+  height: 50px;
+}
+.edit-body h3 {
+  text-align: center;
+  margin: 20px 0 20px 0;
+}
+
+/* IMAGE SECTION */
+.note-icon {
+  grid-area: note-icon;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 15px;
+  max-height: 60px;
+}
+
+/* NOTE SECTION */
+.note-section {
+  grid-area: note-section;
+  display: grid;
+  grid-template-columns: 300px 200px 1fr 14px 300px;
+  grid-template-rows: minmax(2 1fr);
+}
+
+.date-title {
+  display: inline-block;
+  width: 100px;
+}
+.date-title,
+.date {
+  grid-column: 2;
+  margin-left: 25px;
+}
+.description-title {
+  grid-column: 3;
+  display: inline-block;
+  margin-left: 200px;
+}
+.date,
+.description {
+  display: inline-block;
+  margin-top: 40px;
+}
+
+.description {
+  margin-left: 200px;
+  grid-column: 3;
+}
+.checkbox {
+  grid-column: 4;
+}
+
+.description-column button {
+  margin: 70px 0 10px 0;
+}
+
+.submit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.edit-body .input {
+  margin: 0 10px 0 600px;
+  border-radius: 8px;
+  width: 400px;
+}
+.edit-body .submit {
+  width: 160px;
+  height: 35px;
+  margin: 50px 0 0 700px;
+}
+
+/* CSS FOR MOBILE APP */
+
+@media (max-width: 417px) {
+  .notes-container {
+    display: grid;
+    grid-template:
+      " title" 100px
+      " note-icon" 150px
+      "note-section " 1fr
+      "click " 170px
+      "footer " 50px /
+      1fr;
+    height: 100vh;
+    grid-gap: 0px;
+  }
+  /* TITLE SECTION */
+  .notes-container h1 {
+    margin-top: 60px;
+    font-size: 18px;
+  }
+  /* BUTTON */
+
+  .click {
+    display: grid;
+    grid-area: click;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 50px 80px;
+  }
+
+  .add,
+  .edit,
+  .delete {
+    width: 160px;
+    height: 35px;
+    margin: 10px 0 10px 130px;
+  }
+  .add {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .delete {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .edit {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  /* MIDDLE SIDE */
+
+  .description-title {
+    margin: 0px;
+  }
+
+  .note-section {
+    display: grid;
+    grid-template-columns: 90px 240px 14px;
+    grid-template-rows: 80px;
+  }
+  .date-title,
+  .description-title {
+    display: none;
+  }
+  .date {
+    grid-column: 1;
+    margin-left: 5px;
+  }
+  .description {
+    margin-left: 15px;
+    grid-column: 2;
+  }
+
+  .checkbox {
+    grid-column: 3;
+    margin-left: 0;
+  }
+
+  /* CSS EDIT BODY SECTION */
+  .edit-body {
+    display: grid;
+    grid-template-rows: 80px 1fr 100px;
+  }
+  .edit-body h3 {
+    text-align: center;
+    margin: 20px 0 20px 0;
+  }
+  .edit-body .input {
+    margin: 0 10px 0 60px;
+    border-radius: 8px;
+    width: 300px;
+  }
+  .edit-body .submit {
+    width: 160px;
+    height: 35px;
+    margin: 50px 0 0 130px;
+  }
+}
+@media (max-width: 360px) {
+  .add,
+  .edit,
+  .delete {
+    width: 160px;
+    height: 35px;
+    margin: 10px 0 10px 100px;
+  }
+  .edit-body .input {
+    margin: 0 10px 0 30px;
+  }
+  .edit-body .submit {
+    margin: 50px 0 0 100px;
+  }
+}

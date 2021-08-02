@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  color: black;
+}
+
+.nav_links li,
+.nav_links a,
+.button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+}
+.button {
+  color: white;
+}
+
+header,
+.mobileNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 3%;
+  background-color: #faf9f9;
+
+  height: 90px;
+}
+
+.nav_links {
+  list-style: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 0px 35px;
+  margin-right: 120px;
+}
+
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+  color: #0088a9;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.button {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.button:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+.mobileNav {
+  display: none;
+}
+
+/* CSS FOR MOBILE APP*/
+
+@media (max-width: 990px) {
+  .navBar {
+    display: none;
+  }
+
+  /* NAVBAR  */
+
+  .mobileNav {
+    display: flex;
+    align-items: center;
+    background-color: #faf9f9;
+  }
+  .mobileNav .burger {
+    cursor: pointer;
+    color: black;
+    margin-right: 20px;
+  }
+  /* When the menu is opening */
+  .mobileNav nav ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    background: #faf9f9;
+    height: 20%;
+    border-radius: 10px;
+  }
+  .mobileNav nav ul li {
+    padding-left: 15%;
+    padding-top: 12px;
+    text-align: center;
+  }
+
+  .nav_links li {
+    display: inline-block;
+    padding: 0px 35px;
+    margin-right: 0;
+  }
+  .nav_links a {
+    color: black;
+  }
+  .logo {
+    color: black;
+  }
+}
